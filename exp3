@@ -1,0 +1,30 @@
+CREATE TABLE Employee(Emp_id int,Emp_name varchar(100),
+Dept varchar(60),Salary int,
+primary key(Emp_id));
+INSERT INTO Employee VALUES(1,'DAVID SMITH','HR',2500);
+INSERT INTO Employee VALUES(2,'OSTER OHIO','Marketing',4500);
+INSERT INTO Employee VALUES(3,'CHARLES MARTIN','Production',7500);
+INSERT INTO Employee VALUES(4,'ALISTER JOHN','Sales',9500);
+Select * from Employee;
+Select * from Employee where Salary>7000;
+UPDATE Employee SET Salary= 8200 where Emp_name= 'DAVID SMITH';
+Select * from Employee;
+INSERT INTO Employee VALUES(6,'DANNIEL HARRIS','Production',6700);
+Select * from Employee;
+DELETE FROM Employee where Emp_id=3;
+Select * from Employee;
+Select * from Employee Where Emp_name NOT LIKE 'D%' AND Emp_name NOT LIKE 'O%';
+Select Dept, SUM(Salary) FROM Employee GROUP BY Dept;
+UPDATE Employee SET Salary=Salary*1.05 where Dept='Production';
+Select * from Employee;
+DELETE FROM Employee where Salary<7000;
+Select * from Employee;
+Select Salary,Emp_name FROM Employee where Salary=(Select Min(sALARY) FROM Employee);
+INSERT INTO Employee VALUES(7,'NIDHI MATHEW','Marketing',5000);
+UPDATE Employee SET Salary= 8200 where Dept='Marketing';
+Select * from Employee;
+Select * from Employee Where Emp_name LIKE 'A%';
+Select * from Employee Where Emp_name LIKE '%IT%';
+Select Distinct UPPER(Dept) from Employee;
+Select * from Employee Where Dept LIKE 'M_r%' AND Dept LIKE '%ket%';
+SELECT DISTINCT REVERSE(UPPER(Dept)) from Employee;
